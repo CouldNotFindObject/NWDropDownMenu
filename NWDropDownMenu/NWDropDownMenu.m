@@ -2,8 +2,8 @@
 //  NWDropDownMenu.m
 //  NWDropDownMenu
 //
-//  Created by 佟锡杰 on 16/4/27.
-//  Copyright © 2016年 tongxijie. All rights reserved.
+//  Created by on 16/4/27.
+//  Copyright © 2016年 . All rights reserved.
 //
 
 #import "NWDropDownMenu.h"
@@ -12,6 +12,12 @@
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, assign) BOOL isShown;
 @property (nonatomic, assign) BOOL animating;
+@property (strong, nonatomic) IBOutlet UIButton *all;
+@property (strong, nonatomic) IBOutlet UIButton *up;
+@property (strong, nonatomic) IBOutlet UIButton *down;
+
+
+
 @end
 
 @implementation NWDropDownMenu
@@ -59,7 +65,7 @@
         [window addSubview:self];
         __weak NWDropDownMenu *weakSelf = self;
         [UIView animateWithDuration:0.3 animations:^{
-            weakSelf.frame = CGRectMake(0, 65, [UIScreen mainScreen].bounds.size.width, 157);
+            weakSelf.frame = CGRectMake(0, 65, [UIScreen mainScreen].bounds.size.width, 90);
         } completion:^(BOOL finished) {
             if (finished) {
                 _isShown = YES;
@@ -71,15 +77,16 @@
 }
 - (IBAction)leftAction:(id)sender {
     NSLog(@"一万以下");
+    [self showOrHide];
 }
 - (IBAction)centerAction:(id)sender {
     NSLog(@"一万以shang");
+    [self showOrHide];
 }
 - (IBAction)rightAction:(id)sender {
     NSLog(@"quanbu");
+    [self showOrHide];
 }
-- (IBAction)bottomAction:(id)sender {
-    NSLog(@"完成");
-}
+
 
 @end
