@@ -104,7 +104,7 @@
     
     _currentBtn = btn;
     btn.backgroundColor = [UIColor colorWithRed:60.0 / 255 green:116.0/255 blue:229.0/255 alpha:1];
-    _all.tintColor = [UIColor whiteColor];
+    [btn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
 }
 
 @end
