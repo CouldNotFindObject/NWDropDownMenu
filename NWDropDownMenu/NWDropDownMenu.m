@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *down;
 
 
-
+@property (nonatomic, strong) UIButton *currentBtn;
 @end
 
 @implementation NWDropDownMenu
@@ -78,15 +78,33 @@
 - (IBAction)leftAction:(id)sender {
     NSLog(@"一万以下");
     [self showOrHide];
+    [self changeButtonsColor:sender];
 }
 - (IBAction)centerAction:(id)sender {
     NSLog(@"一万以shang");
     [self showOrHide];
+    [self changeButtonsColor:sender];
+
+    
 }
 - (IBAction)rightAction:(id)sender {
     NSLog(@"quanbu");
     [self showOrHide];
+    [self changeButtonsColor:sender];
+
 }
 
+- (void)changeButtonsColor:(UIButton *)btn {
+    _up.backgroundColor = [UIColor clearColor];
+    [_up setTitleColor:[UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:1] forState:(UIControlStateNormal)];
+    _down.backgroundColor = [UIColor clearColor];
+    [_down setTitleColor:[UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:1] forState:(UIControlStateNormal)];
+    _all.backgroundColor = [UIColor clearColor];
+    [_all setTitleColor:[UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:1] forState:(UIControlStateNormal)];
+    
+    _currentBtn = btn;
+    btn.backgroundColor = [UIColor colorWithRed:60.0 / 255 green:116.0/255 blue:229.0/255 alpha:1];
+    _all.tintColor = [UIColor whiteColor];
+}
 
 @end
