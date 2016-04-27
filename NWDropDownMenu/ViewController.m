@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional    // Do any additional setup after  setup after loading the view, typically from a nib.loading the view, typically from a nib.
     self.menu = [[NWDropDownMenu alloc] initWithDelegate:self];
 
 }
