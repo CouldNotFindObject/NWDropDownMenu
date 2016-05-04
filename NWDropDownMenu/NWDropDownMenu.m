@@ -36,6 +36,7 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showOrHide)];
         [self.backView addGestureRecognizer:tap];
         self.layer.masksToBounds = YES;
+        
     }
     return self;
 }
