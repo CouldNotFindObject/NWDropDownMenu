@@ -9,14 +9,15 @@
 #import <UIKit/UIKit.h>
 @class NWDropDownMenu;
 @protocol NWDropDownMenuDelegate <NSObject>
-
-- (void)NWDropDownMenu:(NWDropDownMenu *)menu willHide:(UIButton *)btn;
-
+@optional
+- (void)didNWDropDownMenuButtonClick:(NWDropDownMenu *)NWDropDownMenu andType:(NSString *)type;
+- (void)NWDropDownMenuIsShown:(BOOL)status;
 @end
 
 @interface NWDropDownMenu : UIView
 @property (nonatomic, weak)id<NWDropDownMenuDelegate> delegate;
 - (instancetype)initWithDelegate:(id<NWDropDownMenuDelegate> )delegate;
 - (void)showOrHide;
+- (void)hide;
 
 @end
